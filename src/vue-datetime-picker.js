@@ -159,6 +159,11 @@ module.exports = {
         };
       }
     },
+    timeZone:{
+      required: false,
+      type: String,
+      default: 'UTC'
+    },
     useStrict: {
       required: false,
       type: Boolean,
