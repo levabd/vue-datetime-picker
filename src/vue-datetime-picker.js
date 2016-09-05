@@ -60,10 +60,6 @@ var DEFAULT_LANGUAGE = "en-US";
  *    was changed. If this parameter is presented and is not null, it must be a
  *    function which accept one argument: the new date time, which is a moment
  *    object.
- * @param dpOptions
- *    the optional Bootstrap 3 Date/Time Picker options. If this parameter is
- *    presented and is not null, it must contain options from Date/Time Picker
- *    options list (http://eonasdan.github.io/bootstrap-datetimepicker/Options/)
  */
 module.exports = {
     replace: true,
@@ -306,9 +302,6 @@ module.exports = {
           disabledHours: this.disabledHours,
           viewDate: this.viewDate
         };
-
-        // extend Datetime Picker options with the user provided options (dpOptions)
-        $.extend(true, options, this.dpOptions);
         
         // set the locale
         var language = this.language;
