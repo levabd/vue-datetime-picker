@@ -305,7 +305,8 @@ module.exports = {
           focusOnShow: this.focusOnShow,
           enabledHours: this.enabledHours,
           disabledHours: this.disabledHours,
-          viewDate: this.viewDate
+          viewDate: this.viewDate,
+          timeZone: this.timeZone
         };
         
         // set the locale
