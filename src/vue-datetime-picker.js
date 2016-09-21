@@ -60,6 +60,11 @@ var DEFAULT_LANGUAGE = "en-US";
  *    was changed. If this parameter is presented and is not null, it must be a
  *    function which accept one argument: the new date time, which is a moment
  *    object.
+ * @param onHide
+ *    the optional event handler triggered when the datetime picker was hidden
+ *    If this parameter is presented and is not null, it must be a
+ *    function which accept one argument: the new date time, which is a moment
+ *    object.
  */
 module.exports = {
     replace: true,
@@ -109,7 +114,10 @@ module.exports = {
             required: false,
             default: null
         },
-        
+        onHide:{
+            required: false,
+            default: null
+        },
         
      /**
      * The following options are inherited from DateTimePicker (bootstrap plugin)
@@ -358,6 +366,20 @@ module.exports = {
                     me.isChanging = false;
                     if (me.onChange) {
                         me.onChange( me.model );
+                    }
+                } );
+            }
+        } );
+        
+        
+        $( this.$el ).on( "dp.hide", function() {
+            if (!me.isChanging) {
+                me.isChanging = true;
+                me.model      = me.control.date();
+                me.$nextTick( function() {
+                    me.isChanging = false;
+                    if (me.onHide) {
+                        me.onHide( me.model );
                     }
                 } );
             }
