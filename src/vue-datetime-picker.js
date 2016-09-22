@@ -70,7 +70,7 @@ module.exports = {
     replace: true,
     inherit: false,
     template: "<div class='input-group date'>" +
-    "<input class='form-control' :name='name' type='text' />" +
+    "<input class='form-control' :name='name' type='text'  readonly='readonly'/>" +
     "<span class='input-group-addon'>" +
     "<i class='fa fa-fw fa-calendar'></i>" +
     "</span>" +
